@@ -1,0 +1,16 @@
+# Library Management System
+
+A Java-based OOP project to manage books and members in a library.
+
+## Features
+- Add, remove, search, issue, return, and reserve books
+- Member types: Student, Teacher, Guest, Librarian
+- Due dates and book limits per member type
+- View issued and overdue books
+- Reservation queue for issued books
+
+## How to Run
+1. Compile: javac *.java  
+2. Run: java Main
+
+
