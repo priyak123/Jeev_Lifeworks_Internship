@@ -1,0 +1,21 @@
+# Java Input and Data Type Operations
+
+## Description
+This simple Java program demonstrates how to:
+- Read different data types using the Scanner class
+- Perform basic operations on integers, floats, characters, booleans, and strings
+
+## Features
+- Input:
+  - Two integers
+  - One floating-point number
+  - One character
+  - One boolean value
+  - User's name (string)
+- Output:
+  - Sum, difference, and product of integers
+  - Floating-point number multiplied by 2
+  - Next character in ASCII
+  - Opposite boolean value
+  - Greeting message
+
