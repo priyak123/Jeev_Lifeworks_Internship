@@ -1,1 +1,68 @@
+# 🎓 Student Management System (Spring Boot + MySQL)
+
+This is a Spring Boot application for managing students, performing CRUD operations, and integrating with a MySQL database.
+
+## ✅ Features
+- Create, Read, Update, Delete (CRUD) student records
+- MySQL Database integration
+- Input validation with javax.validation
+- RESTful APIs
+- Global exception handling
+- Swagger/OpenAPI support
+- Unit testing with JUnit & Mockito
+
+## 🏗 Tech Stack
+- Java 17
+- Spring Boot
+- Spring Data JPA
+- MySQL
+- Lombok
+- Swagger (springdoc-openapi)
+- JUnit 5
+
+## ⚙ Configuration
+
+In src/main/resources/application.properties:
+
+spring.datasource.url=jdbc:mysql://localhost:3306/student_db  
+spring.datasource.username=root  
+spring.datasource.password=your_password  
+spring.jpa.hibernate.ddl-auto=update  
+spring.jpa.show-sql=true
+
+## ▶ How to Run
+
+1. Set up MySQL and create student_db
+2. Update credentials in application.properties
+3. Run the application using:
+
+   ./mvnw spring-boot:run
+
+4. Use Postman to test endpoints at:
+
+   http://localhost:8080/students
+
+## 📬 API Endpoints
+
+| Method | Endpoint              | Description         |
+|--------|-----------------------|---------------------|
+| POST   | /students           | Add new student     |
+| GET    | /students           | Get all students    |
+| GET    | /students/{id}      | Get student by ID   |
+| PUT    | /students/{id}      | Update student      |
+| DELETE | /students/{id}      | Delete student      |
+
+## 📁 Folder Structure
+
+src/  
+└── main/  
+  ├── java/com/sms/  
+  │  ├── controller/  
+  │  ├── service/  
+  │  ├── repository/  
+  │  ├── dto/  
+  │  ├── model/  
+  │  └── exception/  
+  └── resources/  
+    └── application.properties
 
