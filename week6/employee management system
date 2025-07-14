@@ -1,4 +1,4 @@
-# Employee Management System – Spring Boot Microservices (All-in-One)
+# Employee Management System – Spring Boot Microservices 
 
 This project is a complete **Employee Management System** using **Java 17**, **Spring Boot**, **JDBC**, and **manual JWT-based authentication** (without any third-party JWT libraries). It consists of two integrated microservices:
 
