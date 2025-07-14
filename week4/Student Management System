@@ -1,1 +1,46 @@
+==============================
+STUDENT MANAGEMENT SYSTEM
+==============================
 
+🔹 Description:
+Console-based Java application to manage student records using JDBC and MySQL. 
+Implements clean architecture with DAO, Service Layer, Java 8 features, and JUnit testing.
+
+🔹 Tech Stack:
+- Java 8
+- JDBC (MySQL)
+- JUnit 5
+- Eclipse IDE
+
+🔹 Features:
+✔ Add, View, Update, Delete students  
+✔ Java 8 Streams and Lambdas  
+✔ File-based config (config.properties)  
+✔ Logging to file (logs/app.log)  
+✔ JUnit 5 test cases
+
+🔹 Database Setup:
+1. Run in MySQL Workbench:
+   CREATE DATABASE studentdb;
+
+   CREATE TABLE students (
+       id INT PRIMARY KEY AUTO_INCREMENT,
+       name VARCHAR(100),
+       age INT,
+       email VARCHAR(100),
+       course VARCHAR(100)
+   );
+
+2. Update DB credentials in resources/config.properties.
+
+🔹 Run Instructions:
+- Open in Eclipse
+- Add MySQL JDBC and JUnit 5 to Build Path
+- Run MainApp.java
+
+🔹 Test:
+- Run StudentServiceTest.java (JUnit 5)
+- All tests should pass ✅
+
+🔹 Author:
+Priyanka P
