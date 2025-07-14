@@ -1,1 +1,102 @@
+# Employee Management System – Spring Boot Microservices (All-in-One)
 
+This project is a complete **Employee Management System** using **Java 17**, **Spring Boot**, **JDBC**, and **manual JWT-based authentication** (without any third-party JWT libraries). It consists of two integrated microservices:
+
+- **User Service**: Handles user registration, login, and profile access.
+- **Employee Service**: Handles employee CRUD operations, secured using JWT tokens.
+
+## 📁 Project Structure
+
+📦 employee-management-system
+├── 📁 user-service
+│   ├── 📁 src/main/java/com/user/userservice
+│   │   ├── 📁 controller            → REST APIs for register, login, and profile
+│   │   ├── 📁 service               → Business logic (UserService, Impl)
+│   │   ├── 📁 model                 → Entity class for User
+│   │   ├── 📁 repository            → UserRepository (extends JpaRepository)
+│   │   ├── 📁 dto                   → Request/response DTOs (UserRequest, LoginRequest)
+│   │   ├── 📁 exception             → Custom exceptions & Global handler
+│   │   ├── 📁 config                → Spring Security & CORS config
+│   │   ├── 📁 util                  → JwtUtil (manual token creation/validation)
+│   │   ├── 📁 filter                → JwtFilter (intercepts incoming requests)
+│   │   └── 📄 UserServiceApplication.java → Main Spring Boot entry point
+│   └── 📁 resources
+│       ├── 📄 application.properties → DB config + jwt.secret
+│       └── 📄 schema.sql             → Table schema for `users`
+
+├── 📁 employee-service
+│   ├── 📁 src/main/java/com/employee/employeeservice
+│   │   ├── 📁 controller            → REST APIs for employee CRUD
+│   │   ├── 📁 service               → Business logic (EmployeeService, Impl)
+│   │   ├── 📁 model                 → Employee entity class
+│   │   ├── 📁 repository            → DAO implementation using JdbcTemplate
+│   │   ├── 📁 dto                   → Employee request/response DTOs
+│   │   ├── 📁 exception             → Custom exceptions & Global handler
+│   │   ├── 📁 config                → Spring Security & JWT validation config
+│   │   ├── 📁 util                  → JwtUtil (same secret validation as user-service)
+│   │   ├── 📁 filter                → JwtFilter to secure endpoints
+│   │   └── 📄 EmployeeServiceApplication.java → Main Spring Boot entry point
+│   └── 📁 resources
+│       ├── 📄 application.properties → DB + JWT settings
+│       └── 📄 schema.sql             → Table schema for `employees`
+
+
+## Prerequisites
+
+- Java 17+
+- Maven
+- MySQL (or H2)
+- Eclipse or IntelliJ
+- Postman
+
+## ⚙️ How to Run
+
+###  User Service (Port 8081)
+1. Import `user-service` in Eclipse
+2. Configure DB in `application.properties`
+3. Run `UserServiceApplication.java`
+
+### Employee Service (Port 8082)
+1. Import `employee-service` in Eclipse
+2. Configure DB in `application.properties`
+3. Run `EmployeeServiceApplication.java`
+
+---
+
+## ⚙️ Database Setup
+
+### 🛠️ `schema.sql`
+
+#### User Service:
+```sql
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) UNIQUE NOT NULL,
+  password VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL
+);
+##### Employee Service 
+
+CREATE TABLE employees (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100),
+  department VARCHAR(50),
+  position VARCHAR(50),
+  salary DOUBLE
+);
+
+#### Key Features
+
+Manual JWT generation using HMAC SHA256 and Base64
+
+Secured endpoints using Spring Security and JWT filter
+
+JDBC Template instead of JPA
+
+Java 8 streams and collections for in-memory filtering/grouping
+
+Global exception handling with proper HTTP response codes
+
+Input validation using @NotBlank, @Email, @Min, @Valid
+
+Clean layered architecture (Controller, Service, Repo, Config, Filter)
