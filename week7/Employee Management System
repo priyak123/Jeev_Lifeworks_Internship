@@ -1,1 +1,166 @@
+# 🛡️ Spring Boot Employee Management System (Spring Security + JWT)
+
+This project is a secured RESTful **Employee Management System** using **Spring Boot**, **Spring Security**, and a **custom JWT implementation**. It supports **role-based access control** for `ADMIN` and `USER`.
+
+---
+
+## 🚀 Features
+
+- ✅ User Login with JWT token
+- ✅ Role-based access: `ADMIN`, `USER`
+- ✅ BCrypt password encoding
+- ✅ REST APIs for employee operations
+- ✅ MySQL database integration
+- ✅ Custom exception handling
+
+---
+
+## 🧑‍💻 Tech Stack
+
+- Java 8+
+- Spring Boot 3.x
+- Spring Security
+- MySQL
+- Maven
+- Postman (for testing)
+
+---
+
+## ⚙️ `application.properties`
+
+spring.application.name=employee-security
+server.port=8080
+
+spring.datasource.url=jdbc:mysql://localhost:3306/employeedb
+spring.datasource.username=root
+spring.datasource.password=Priya2612*
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show=true
+
+logging.level.org.springframework.security=DEBUG
+
+---
+
+## 🔐 Authentication and Authorization
+
+| Endpoint             | Method | Access Role     | Description                     |
+|---------------------|--------|-----------------|---------------------------------|
+| `/api/login`        | POST   | PUBLIC          | Login and get JWT token         |
+| `/api/profile`      | GET    | USER / ADMIN    | View profile info               |
+| `/api/employees`    | GET    | ADMIN only      | View employee list              |
+| `/api/employees`    | POST   | ADMIN only      | Add new employee                |
+
+---
+
+## 🧪 Login Test Cases (Postman)
+
+### ✅ Login as Admin
+
+- **POST** `/api/login`
+```json
+{
+  "username": "admin",
+  "password": "admin123"
+}
+```
+
+- ✅ Response:
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR..."
+}
+```
+
+---
+
+### ✅ Login as User
+
+- **POST** `/api/login`
+```json
+{
+  "username": "user",
+  "password": "user123"
+}
+```
+
+- ✅ Response:
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR..."
+}
+```
+
+---
+
+## 🔑 JWT Token Usage
+
+Use the token received after login to access protected APIs.
+
+- ✅ Add the following header to each secured request:
+
+```
+Authorization: Bearer <your-token>
+```
+
+---
+
+## 📂 Folder Structure
+
+```
+src/
+ └── main/
+     └── java/
+         └── com.ems.employee_security/
+             ├── controller/
+             │   ├── AuthController.java
+             │   ├── EmployeeController.java
+             │   └── ProfileController.java
+             ├── dto/
+             │   └── LoginRequest.java
+             ├── exception/
+             │   └── CustomAccessDeniedHandler.java
+             ├── security/
+             │   └── JwtFilter.java
+             └── util/
+                 └── JwtUtil.java
+ resources/
+ └── application.properties
+```
+
+---
+
+## 🚫 Error Handling
+
+| Status | Meaning                             | Cause                                      |
+|--------|-------------------------------------|--------------------------------------------|
+| 401    | Unauthorized                        | Invalid/missing token                      |
+| 403    | Forbidden                           | Authenticated but role is not authorized   |
+
+---
+
+## ✅ User Credentials
+
+| Username | Password  | Role       | Token Access to `/employees` |
+|----------|-----------|------------|-------------------------------|
+| `admin`  | admin123  | ROLE_ADMIN | ✅ Yes                        |
+| `user`   | user123   | ROLE_USER  | ❌ No                         |
+
+---
+
+## 📦 How to Run
+
+1. Create the MySQL DB using `schema.sql`.
+2. Update `application.properties` with your DB credentials.
+3. Run the project using:
+
+```bash
+mvn spring-boot:run
+```
+
+4. Test with Postman using the login and JWT tokens.
+
+---
+## Author
+ Priyanka P
 
