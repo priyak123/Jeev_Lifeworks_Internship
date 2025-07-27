@@ -1,0 +1,73 @@
+# ✅ Angular To-Do App Assignment
+
+A simple and modular Angular application with **Login**, **Signup**, and a **To-Do List**. Built using Angular, this app implements user authentication, reactive form validations, task filtering, searching, and local storage persistence.
+
+---
+
+## 📦 Features
+
+### 👤 Signup Page
+- Full Name, Email, Password, Confirm Password
+- Validations:
+  - All fields are required
+  - Email must be valid
+  - Password must be at least 6 characters
+  - Confirm Password must match
+- On success: Save user to localStorage and redirect to login
+
+### 🔐 Login Page
+- Fields: Email, Password
+- Validations:
+  - Required fields
+  - Valid email format
+- Authenticate using stored credentials
+- On success: Redirect to To-Do page
+- On failure: Show error message
+
+### ✅ To-Do List Page
+- Add Task (Title required, Description & Due Date optional)
+- List separates:
+  - Pending Tasks
+  - Completed Tasks
+- Toggle complete/incomplete
+- Delete tasks
+- Persist tasks in localStorage
+
+### 🔍 Bonus (Optional)
+- Search tasks by title
+- Filter: All / Completed / Pending
+- Sort tasks by due date
+
+---
+
+## ⚙️ Technologies Used
+- Angular (v17+)
+- TypeScript
+- Reactive Forms
+- HTML5 + CSS3
+- Local Storage for persistence
+
+---
+
+## 📁 Folder Structure
+angular-todo-app/
+├── src/
+│ ├── app/
+│ │ ├── components/
+│ │ │ ├── login/
+│ │ │ ├── signup/
+│ │ │ └── todo/
+│ │ ├── services/
+│ │ │ └── auth.service.ts
+│ │ ├── guards/
+│ │ │ └── auth.guard.ts
+│ │ ├── app-routing.module.ts
+│ │ └── app.module.ts
+├── assets/
+├── angular.json
+├── package.json
+
+
+
+## Author :
+Priyanka P
