@@ -1,0 +1,62 @@
+<h2>Signup</h2>
+
+<!-- Signup form using Reactive Forms -->
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+  <!-- Full Name Field -->
+  <div>
+    <label>Full Name</label>
+    <input type="text" formControlName="fullName" />
+    
+    <!-- Show error if full name is empty after form submission -->
+    <div *ngIf="submitted && f['fullName'].errors">
+      <small *ngIf="f['fullName'].errors['required']">Full Name is required</small>
+    </div>
+  </div>
+
+  <!-- Email Field -->
+  <div>
+    <label>Email</label>
+    <input type="email" formControlName="email" />
+    
+    <!-- Show errors for missing or invalid email after submission -->
+    <div *ngIf="submitted && f['email'].errors">
+      <small *ngIf="f['email'].errors['required']">Email is required</small>
+      <small *ngIf="f['email'].errors['email']">Email is invalid</small>
+    </div>
+  </div>
+
+  <!-- Password Field -->
+  <div>
+    <label>Password</label>
+    <input type="password" formControlName="password" />
+    
+    <!-- Show errors for missing or too short password -->
+    <div *ngIf="submitted && f['password'].errors">
+      <small *ngIf="f['password'].errors['required']">Password is required</small>
+      <small *ngIf="f['password'].errors['minlength']">
+        Password must be at least 6 characters
+      </small>
+    </div>
+  </div>
+
+  <!-- Confirm Password Field -->
+  <div>
+    <label>Confirm Password</label>
+    <input type="password" formControlName="confirmPassword" />
+    
+    <!-- Show error if confirm password is missing -->
+    <div *ngIf="submitted && f['confirmPassword'].errors">
+      <small *ngIf="f['confirmPassword'].errors['required']">Confirm Password is required</small>
+    </div>
+  </div>
+
+  <!-- Error message from backend or client-side validation -->
+  <div *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</div>
+
+  <!-- Submit Button -->
+  <button type="submit">Signup</button>
+</form>
+
+<!-- Navigation to login page -->
+<p>Already have an account? <a routerLink="/login">Login here</a></p>

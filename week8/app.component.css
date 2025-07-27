@@ -1,0 +1,103 @@
+/* Apply base font and background to entire page */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f4f7;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for all <h2> headers */
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+/* Main form container styling */
+form {
+  max-width: 400px; /* Limits form width */
+  margin: 20px auto; /* Centered with vertical spacing */
+  background: white; /* White form background */
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Spacing between form fields */
+form div {
+  margin-bottom: 15px;
+}
+
+/* Style for form labels */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Style for input and textarea fields */
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box; /* Includes padding in width */
+}
+
+/* Style for error message text */
+small {
+  color: red;
+}
+
+/* Base button styling */
+button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Bootstrap blue */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Style for task lists */
+ul {
+  list-style: none; /* Removes bullet points */
+  padding: 0;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Style for each task item */
+li {
+  padding: 10px;
+  background: #fff;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between; /* Space between text and buttons */
+  align-items: center;
+}
+
+/* Horizontal rule spacing */
+hr {
+  margin: 30px 0;
+}
+
+/* Style for links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Link hover effect */
+a:hover {
+  text-decoration: underline;
+}
+
+/* Paragraph text centering */
+p {
+  text-align: center;
+}

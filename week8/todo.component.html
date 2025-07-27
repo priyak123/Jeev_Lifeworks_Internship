@@ -1,0 +1,102 @@
+<!-- 🔷 Main Heading -->
+<h2>Welcome to To-Do List</h2>
+
+<!-- 📝 Task Creation Form using Reactive Forms -->
+<form [formGroup]="taskForm" (ngSubmit)="addTask()" novalidate>
+  <!-- 📌 Task Title Field -->
+  <div>
+    <label for="title">Task Title</label>
+    <input
+      type="text"
+      id="title"
+      formControlName="title"
+      placeholder="Enter task title"
+    />
+    <!-- ⚠️ Validation: Show error if title is not entered after submit -->
+    <div *ngIf="submitted && f['title'].errors">
+      <small *ngIf="f['title'].errors['required']" style="color:red;">
+        Task title is required
+      </small>
+    </div>
+  </div>
+
+  <!-- 📎 Optional Description Field -->
+  <div>
+    <label for="description">Description</label>
+    <textarea
+      id="description"
+      formControlName="description"
+      placeholder="Optional description"
+    ></textarea>
+  </div>
+
+  <!-- 📅 Due Date Picker -->
+  <div>
+    <label for="dueDate">Due Date</label>
+    <input type="date" id="dueDate" formControlName="dueDate" />
+  </div>
+
+  <!-- ➕ Submit Button -->
+  <button type="submit">Add Task</button>
+</form>
+
+<!-- ➖ Divider -->
+<hr />
+
+<!-- 🔍 Search and Filter Options -->
+<div class="filter-controls">
+  <!-- 🔎 Text Input for Searching Tasks -->
+  <input
+    type="text"
+    placeholder="Search tasks..."
+    [(ngModel)]="searchText"
+    name="search"
+  />
+
+  <!-- 📂 Filter Buttons: All / Pending / Completed -->
+  <div class="filter-buttons">
+    <button (click)="setFilter('all')">All</button>
+    <button (click)="setFilter('pending')">Pending</button>
+    <button (click)="setFilter('completed')">Completed</button>
+  </div>
+</div>
+
+<!-- 📋 List of Pending Tasks -->
+<h3 *ngIf="filteredPendingTasks().length > 0">Pending Tasks</h3>
+<ul>
+  <li *ngFor="let task of filteredPendingTasks(); let i = index">
+    <!-- ✅ Toggle Completion Checkbox -->
+    <input type="checkbox" [checked]="task.completed" (change)="toggleComplete(task)" />
+    
+    <!-- 🧾 Task Info with Due Date -->
+    <span>
+      {{ task.title }} - {{ task.description }} (Due: {{ task.dueDate | date:'shortDate' }})
+    </span>
+    
+    <!-- 🗑️ Delete Button -->
+    <button (click)="deleteTask(task)">Delete</button>
+  </li>
+</ul>
+
+<!-- 📋 List of Completed Tasks -->
+<h3 *ngIf="filteredCompletedTasks().length > 0">Completed Tasks</h3>
+<ul>
+  <li *ngFor="let task of filteredCompletedTasks(); let i = index">
+    <!-- ☑️ Toggle Incomplete -->
+    <input type="checkbox" [checked]="task.completed" (change)="toggleComplete(task)" />
+    
+    <!-- ✅ Task Text Strikethrough for Completed -->
+    <span>
+      <s>{{ task.title }} - {{ task.description }} (Due: {{ task.dueDate | date:'shortDate' }})</s>
+    </span>
+    
+    <!-- 🗑️ Delete Button -->
+    <button (click)="deleteTask(task)">Delete</button>
+  </li>
+</ul>
+
+<!-- ➖ Divider -->
+<hr />
+
+<!-- 🔐 Logout Button -->
+<button class="logout-btn" (click)="logout()">Logout</button>

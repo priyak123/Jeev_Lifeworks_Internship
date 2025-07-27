@@ -1,0 +1,174 @@
+/* 🌐 Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, #dfe9f3 0%, #ffffff 100%);
+  color: #2d3436;
+}
+
+/* 🔠 Headings */
+h2, h3 {
+  text-align: center;
+  margin: 30px 0 15px;
+  color: #2c3e50;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* 📋 Form Styling */
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 25px;
+  background: #ffffffcc;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+form:hover {
+  transform: scale(1.01);
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f7fafd;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  background-color: #ecf6ff;
+}
+
+/* 🧷 Buttons */
+button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: linear-gradient(45deg, #3498db, #6ab4f5);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  width: 100%;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #2980b9, #468bcf);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ⚠️ Error Message */
+small {
+  color: #e74c3c;
+  font-size: 0.85em;
+}
+
+/* 📃 Task List */
+ul {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+li {
+  background: #f4faff;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border-left: 6px solid #3498db;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.3s;
+}
+
+li:hover {
+  background-color: #eaf4fd;
+}
+
+li input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+  accent-color: #3498db;
+}
+
+li span {
+  flex: 1;
+  font-size: 1rem;
+  color: #2c3e50;
+}
+
+/* ✅ Completed task */
+s {
+  color: #95a5a6;
+}
+
+/* ❌ Delete Button */
+li button {
+  background-color: transparent;
+  border: none;
+  color: #e74c3c;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+  width:auto
+  }
+
+li button:hover {
+  color: #c0392b;
+  transform: scale(1.1);
+}
+
+/* 🚪 Logout Button */
+.logout-btn,
+button.logout {
+  background-color: #e74c3c;
+  color: white;
+  font-weight: bold;
+  padding: 12px 25px;
+  margin: 30px auto;
+  display: block;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  width:100%;
+}
+
+.logout-btn:hover,
+button.logout:hover {
+  background-color: #c0392b;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* 📱 Responsive */
+@media (max-width: 640px) {
+  form, ul {
+    width: 90%;
+  }
+
+  button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,77 @@
+/* 🧾 Signup/Login Form Container */
+form {
+  max-width: 450px;             /* Limit form width */
+  margin: 0 auto;               /* Center horizontally */
+  padding: 20px;                /* Inner spacing */
+  border: 1px solid #ddd;       /* Light gray border */
+  border-radius: 8px;           /* Rounded corners */
+  background-color: #f9f9f9;    /* Light background */
+}
+
+/* 🧷 Heading Style */
+h2 {
+  text-align: center;           /* Center align heading */
+  margin-bottom: 20px;          /* Space below heading */
+  color: #333;                  /* Dark gray text color */
+}
+
+/* 🏷️ Label Style */
+label {
+  display: block;               /* One label per line */
+  margin-top: 15px;             /* Space above each label */
+  font-weight: bold;            /* Bold text for labels */
+  color: #444;                  /* Slightly lighter than heading */
+}
+
+/* 🖊️ Input Field Styles */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;                  /* Full width */
+  padding: 8px;                 /* Inner padding */
+  margin-top: 5px;              /* Space between label and input */
+  box-sizing: border-box;       /* Includes padding in width */
+  border: 1px solid #ccc;       /* Light border */
+  border-radius: 4px;           /* Slight rounding for aesthetics */
+}
+
+/* ⚠️ Error Message Styling */
+small {
+  color: red;                   /* Red text for validation errors */
+  font-size: 0.85em;            /* Slightly smaller text */
+}
+
+/* 🔘 Submit Button Styling */
+button {
+  margin-top: 20px;             /* Space above button */
+  width: 100%;                  /* Full-width button */
+  padding: 10px;                /* Button padding */
+  background-color: #28a745;    /* Bootstrap green */
+  color: white;                 /* White button text */
+  font-size: 1em;               /* Standard font size */
+  border: none;                 /* No border */
+  border-radius: 4px;           /* Rounded corners */
+  cursor: pointer;              /* Pointer cursor on hover */
+}
+
+/* 🔘 Button Hover Effect */
+button:hover {
+  background-color: #218838;    /* Darker green on hover */
+}
+
+/* 📄 Paragraph Below Form */
+p {
+  text-align: center;           /* Center align paragraph */
+  margin-top: 15px;             /* Space above paragraph */
+}
+
+/* 🔗 Anchor (Link) Styling */
+a {
+  color: #007bff;               /* Blue link color */
+  text-decoration: none;        /* No underline */
+}
+
+/* 🔗 Hover Effect for Link */
+a:hover {
+  text-decoration: underline;   /* Underline on hover */
+}
