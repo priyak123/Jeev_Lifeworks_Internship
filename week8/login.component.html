@@ -1,0 +1,39 @@
+<h2>Login</h2>
+
+<!-- Login form using Angular Reactive Forms -->
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  
+  <!-- Email Field -->
+  <div>
+    <label>Email</label>
+    <input type="email" formControlName="email" />
+    
+    <!-- Show validation messages only after form is submitted and if there are email errors -->
+    <div *ngIf="submitted && f['email'].errors">
+      <small *ngIf="f['email'].errors['required']">Email is required</small>
+      <small *ngIf="f['email'].errors['email']">Email is invalid</small>
+    </div>
+  </div>
+
+  <!-- Password Field -->
+  <div>
+    <label>Password</label>
+    <input type="password" formControlName="password" />
+
+    <!-- Show validation message only after submission and if password is missing -->
+    <div *ngIf="submitted && f['password'].errors">
+      <small *ngIf="f['password'].errors['required']">Password is required</small>
+    </div>
+  </div>
+
+  <!-- Display error message from backend if login fails -->
+  <div *ngIf="errorMessage" style="color: red;">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Submit button for form -->
+  <button type="submit">Login</button>
+</form>
+
+<!-- Link to signup page if user doesn't have an account -->
+<p>Don't have an account? <a routerLink="/signup">Signup here</a></p>

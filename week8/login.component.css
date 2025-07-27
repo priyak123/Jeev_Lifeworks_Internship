@@ -1,0 +1,76 @@
+/* 🧾 Login Form Container Styling */
+form {
+  max-width: 500px;             /* Set form width */
+  margin: 0 auto;               /* Center the form horizontally */
+  padding: 20px;                /* Inner spacing */
+  border: 1px solid #ddd;       /* Light gray border */
+  border-radius: 8px;           /* Slightly rounded corners */
+  background-color: #f9f9f9;    /* Light background */
+}
+
+/* 🧷 Heading Styling */
+h2 {
+  text-align: center;           /* Center align heading */
+  margin-bottom: 20px;          /* Space below heading */
+  color: #333;                  /* Dark gray text color */
+}
+
+/* 🏷️ Label Styling */
+label {
+  display: block;               /* One label per line */
+  margin-top: 15px;             /* Space above each label */
+  font-weight: bold;            /* Make label text bold */
+  color: #444;                  /* Dark gray label text */
+}
+
+/* 🖊️ Input Fields Styling */
+input[type="email"],
+input[type="password"] {
+  width: 100%;                  /* Full width of the container */
+  padding: 8px;                 /* Padding inside input */
+  margin-top: 5px;              /* Space between label and input */
+  box-sizing: border-box;       /* Includes padding in total width */
+  border: 1px solid #ccc;       /* Light gray border */
+  border-radius: 4px;           /* Rounded corners for input */
+}
+
+/* ⚠️ Error Message Styling */
+small {
+  color: red;                   /* Red color for error messages */
+  font-size: 0.9em;             /* Slightly smaller font size */
+}
+
+/* 🔘 Button Styling */
+button {
+  margin-top: 20px;             /* Space above the button */
+  width: 100%;                  /* Full width of the form */
+  padding: 10px;                /* Inner spacing */
+  background-color: #007bff;    /* Bootstrap primary blue */
+  color: white;                 /* White text color */
+  font-size: 1em;               /* Standard font size */
+  border: none;                 /* No border */
+  border-radius: 4px;           /* Rounded corners */
+  cursor: pointer;              /* Pointer cursor on hover */
+}
+
+/* 🔘 Button Hover Effect */
+button:hover {
+  background-color: #0056b3;    /* Darker blue on hover */
+}
+
+/* 📄 Paragraph Styling Below Form */
+p {
+  text-align: center;           /* Center the paragraph */
+  margin-top: 15px;             /* Space above paragraph */
+}
+
+/* 🔗 Link Styling */
+a {
+  color: #007bff;               /* Bootstrap link blue */
+  text-decoration: none;        /* Remove underline */
+}
+
+/* 🔗 Link Hover Effect */
+a:hover {
+  text-decoration: underline;   /* Underline on hover */
+}
