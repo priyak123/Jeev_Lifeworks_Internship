@@ -1,1 +1,71 @@
+# Smart Task Manager - Backend
 
+## Project Overview
+
+The **Smart Task Manager** backend is a Spring Boot-based RESTful API server designed to manage tasks and users within an organization. It supports role-based access control, user authentication via JWT, task management, notifications, reporting, and audit logging. The backend ensures secure and efficient handling of user and task data to power a responsive frontend application.
+
+---
+
+## Features
+
+### User Authentication & Authorization
+- User registration with email verification
+- JWT-based authentication and session management
+- Password encryption with BCrypt
+- Role-based access control (Admin, Manager, Employee)
+- Forgot password functionality with email token verification
+
+### Task Management
+- Create, update, delete tasks with fields: title, description, due date, priority, tags, and status
+- Assign tasks to one or multiple employees
+- Employees can update task status
+- Filtering tasks by status, due date, assignee, priority
+- Track task progress for Admins and Managers
+
+### Notification System
+- Email notifications on new task assignment
+- Scheduled daily email reminders for upcoming or overdue tasks
+- Option to enable/disable notifications per user settings
+
+### Reporting and Analytics
+- Generate downloadable reports (PDF, Excel) by task status, assigned user, and date range
+- Provide APIs for analytics data to support dashboards and charts
+
+### User & Role Management
+- Admin APIs to add/edit/delete users
+- Role assignment and modification
+- Activity logs for audit and compliance
+
+| Endpoint                   | ADMIN | MANAGER | EMPLOYEE |
+| -------------------------- | :---: | :-----: | :------: |
+| `POST /api/tasks`          |   ✅   |    ✅    |     ❌    |
+| `PUT /api/tasks/{id}`      |   ✅   |    ✅    |     ❌    |
+| `GET /api/tasks`           |   ✅   |    ✅    |     ✅    |
+| `GET /api/tasks/user/{id}` |   ✅   |    ✅    |     ✅    |
+| `DELETE /api/tasks/{id}`   |   ✅   |    ❌    |     ❌    |
+
+---
+
+## Technologies Used
+
+### Backend
+- **Spring Boot** (REST API development)
+- **Spring Security with JWT** (Authentication & Authorization)
+- **Spring Data JPA** (ORM with MySQL or PostgreSQL)
+- **JavaMailSender** (Email notifications)
+- **Swagger/OpenAPI** (API documentation)
+- **BCrypt** (Password hashing)
+- **Scheduler (Spring @Scheduled)** (Daily reminders)
+
+---
+
+## Setup Instructions
+
+### Prerequisites
+- Java 17+
+- Maven 3.8+
+- MySQL or PostgreSQL Database
+- SMTP email account for sending emails
+
+## Author
+Priyanka P
